@@ -1,12 +1,9 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-# get '/' do
-#   "Hello, World!"
-# end
+
+number = rand(100)
 
 get '/' do
-  x = rand(0..100)
-  y = "The secret number is #{x}."
-  y.upcase
+  erb :index, :locals => {:number => number}
 end
